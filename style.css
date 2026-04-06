@@ -1,0 +1,111 @@
+/* Smooth scrolling */
+html {
+    scroll-behavior: smooth;
+}
+
+/* General Styles */
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    line-height: 1.6;
+    background-color: #f9f9f9;
+}
+
+/* Navbar */
+nav {
+    background-color: #333;
+    color: #fff;
+    padding: 10px 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+nav ul {
+    list-style: none;
+    display: flex;
+    gap: 15px;
+    margin: 0;
+    padding: 0;
+}
+
+nav ul li a {
+    color: #fff;
+    text-decoration: none;
+}
+
+nav ul li a:hover {
+    text-decoration: underline;
+}
+
+/* Sections */
+section {
+    padding: 50px 20px;
+    margin: 20px auto;
+    max-width: 800px;
+    background-color: #fff;
+    border-radius: 8px;
+}
+
+/* Headings */
+h1, h2, h3 {
+    color: #333;
+}
+
+/* Button */
+button {
+    padding: 10px 20px;
+    background-color: #333;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+button:hover {
+    background-color: #555;
+}
+/* Highlight active navbar link */
+nav ul li a.active {
+    text-decoration: underline;
+    font-weight: bold;
+}
+
+/* Optional: Different background colors for sections */
+#home { background-color: #e3f2fd; }
+#about { background-color: #fff3e0; }
+#skills { background-color: #e8f5e9; }
+#contact { background-color: #fce4ec; }
+
+/* Center the Hero Section */
+#home {
+    text-align: center;
+}
+/* Mobile Responsive */
+@media (max-width: 768px) {
+
+    nav {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    nav ul {
+        flex-direction: column;
+        gap: 10px;
+        margin-top: 10px;
+    }
+
+    section {
+        margin: 10px;
+        padding: 30px 15px;
+    }
+
+    h1 {
+        font-size: 24px;
+    }
+
+    h2 {
+        font-size: 20px;
+    }
+}
