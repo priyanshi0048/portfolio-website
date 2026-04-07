@@ -10,31 +10,40 @@
 
   <!-- Navbar -->
   <nav>
-    <h2>Your Name</h2>
+    <h2>Priyanshi</h2>
     <ul>
       <li><a href="#home">Home</a></li>
       <li><a href="#about">About</a></li>
       <li><a href="#skills">Skills</a></li>
+      <li><a href="#projects">Projects</a></li>
       <li><a href="#contact">Contact</a></li>
     </ul>
+    <button id="darkModeToggle" style="margin-left: 15px; padding:5px 10px; border-radius:5px; cursor:pointer;">
+      🌙 Dark Mode
+    </button>
   </nav>
 
   <!-- Hero Section -->
-  <section id="home">
-    <h1>Hii I'm Priyanshi</h1>
+  <section id="home" class="hidden">
+    <h1>Hi, I'm Priyanshi</h1>
     <h3>Frontend Developer</h3>
-    <p>I build mordern and responsive website.</p>
-    <button>Contact Me</button>
+    <p>I build modern and responsive websites.</p>
+    <button onclick="document.getElementById('contact').scrollIntoView()">
+      Contact Me
+    </button>
   </section>
 
   <!-- About Section -->
-  <section id="about">
+  <section id="about" class="hidden">
     <h2>About Me</h2>
-    <p>I am a passionate frontend developer lerning modern technologies I love creating clean Ui designs and improving user experience .</p>
+    <p>
+      I am a passionate frontend developer learning modern technologies.
+      I love creating clean UI designs and improving user experience.
+    </p>
   </section>
 
   <!-- Skills Section -->
-  <section id="skills">
+  <section id="skills" class="hidden">
     <h2>Skills</h2>
     <ul>
       <li>HTML</li>
@@ -43,22 +52,54 @@
     </ul>
   </section>
 
+  <!-- Projects Section -->
+  <section id="projects" class="hidden">
+    <h2>My Projects</h2>
+    <div class="projects-container">
+      <div class="project-card">
+        <h3>Portfolio Website</h3>
+        <p>My personal website built with HTML, CSS, and JavaScript.</p>
+        <a href="#" target="_blank">View Project</a>
+      </div>
+      <div class="project-card">
+        <h3>Todo App</h3>
+        <p>A simple todo app using JavaScript to manage tasks dynamically.</p>
+        <a href="#" target="_blank">View Project</a>
+      </div>
+      <div class="project-card">
+        <h3>Weather App</h3>
+        <p>Weather forecast app using OpenWeatherMap API and JavaScript.</p>
+        <a href="#" target="_blank">View Project</a>
+      </div>
+    </div>
+  </section>
+
   <!-- Contact Section -->
-  <section id="contact">
+  <section id="contact" class="hidden">
     <h2>Contact</h2>
     <p>Email: bosepriyanshi0805@gmail.com</p>
     <p>Phone: 123-456-7890</p>
   </section>
+
 <script>
+  // Navbar active link + scroll animation
   const sections = document.querySelectorAll("section");
   const navLinks = document.querySelectorAll("nav ul li a");
 
   window.addEventListener("scroll", () => {
     let current = "";
+
     sections.forEach(section => {
       const sectionTop = section.offsetTop - 60;
+
       if (pageYOffset >= sectionTop) {
         current = section.getAttribute("id");
+      }
+
+      // Scroll animation
+      const rect = section.getBoundingClientRect();
+      if (rect.top < window.innerHeight - 100) {
+        section.classList.add("show");
       }
     });
 
@@ -69,6 +110,18 @@
       }
     });
   });
+
+  // Dark Mode Toggle
+  const toggleBtn = document.getElementById('darkModeToggle');
+  toggleBtn.addEventListener('click', () => {
+    document.body.classList.toggle('dark-mode');
+    if (document.body.classList.contains('dark-mode')) {
+      toggleBtn.textContent = '☀️ Light Mode';
+    } else {
+      toggleBtn.textContent = '🌙 Dark Mode';
+    }
+  });
 </script>
+
 </body>
 </html>
