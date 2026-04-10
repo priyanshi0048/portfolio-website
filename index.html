@@ -1,135 +1,181 @@
-<!DOCTYPE html> 
+<!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Priyanshi | Portfolio</title>
-    <link rel="stylesheet" href="style.css">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Priyanshi | Portfolio</title>
+  <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
-  <!-- Navbar -->
-  <nav>
-    <h2>Priyanshi</h2>
-    <ul>
-      <li><a href="#home" class="nav-link">Home</a></li>
-      <li><a href="#about" class="nav-link">About</a></li>
-      <li><a href="#skills" class="nav-link">Skills</a></li>
-      <li><a href="#projects" class="nav-link">Projects</a></li>
-      <li><a href="#contact" class="nav-link">Contact</a></li>
-    </ul>
-    <button id="darkModeToggle">🌙 Dark Mode</button>
-  </nav>
+<!-- Scroll Progress -->
+<div id="progressBar"></div>
 
-  <!-- Hero Section -->
-  <section id="home" class="hidden">
-    <h1>Hi, I'm Priyanshi</h1>
-    <h3>Frontend Developer</h3>
-    <p>I build modern and responsive websites.</p>
-    <button id="contactBtn">Contact Me</button>
-  </section>
+<!-- Navbar -->
+<nav class="navbar">
+  <h2 class="logo">Priyanshi</h2>
 
-  <!-- About -->
-  <section id="about" class="hidden">
-    <h2>About Me</h2>
-    <p>
-      I am a frontend developer passionate about building responsive and user-friendly websites.
-      I enjoy working with HTML, CSS, and JavaScript to create clean and interactive designs.
-    </p>
-  </section>
+  <div class="menu-toggle" id="menuToggle">☰</div>
 
-  <!-- Skills -->
-  <section id="skills" class="hidden">
-    <h2>Skills</h2>
-    <ul>
-      <li>HTML</li>
-      <li>CSS</li>
-      <li>JavaScript</li>
-      <li>React</li>
-      <li>Git</li>
-      <li>Responsive Design</li>
-      <li>UI/UX</li>
-    </ul>
-  </section>
+  <ul class="nav-links" id="navLinks">
+    <li><a href="#home" class="nav-link">Home</a></li>
+    <li><a href="#about" class="nav-link">About</a></li>
+    <li><a href="#skills" class="nav-link">Skills</a></li>
+    <li><a href="#projects" class="nav-link">Projects</a></li>
+    <li><a href="#contact" class="nav-link">Contact</a></li>
+  </ul>
 
-  <!-- Projects -->
-  <section id="projects" class="hidden">
-    <h2>My Projects</h2>
+  <button id="darkModeToggle">🌙</button>
+</nav>
 
-    <div class="projects-container">
-      <div class="project-card">
-        <h3>Portfolio Website</h3>
-        <p>Personal portfolio showcasing skills.</p>
-        <a href="#">View Code</a>
-      </div>
+<!-- HERO -->
+<section id="home" class="hero hidden">
+  <div class="hero-left">
+    <h1>Hi, I'm <span>Priyanshi</span></h1>
+    <h3><span id="typing"></span></h3>
+    <p>I build modern, clean and responsive websites.</p>
+    <button id="contactBtn">Let's Connect</button>
+  </div>
 
-      <div class="project-card">
-        <h3>Todo App</h3>
-        <p>Task manager using JavaScript.</p>
-        <a href="#">View Code</a>
-      </div>
-
-      <div class="project-card">
-        <h3>Weather App</h3>
-        <p>Real-time weather using API.</p>
-        <a href="#">View Code</a>
-      </div>
+  <div class="hero-right">
+    <div class="hero-card">
+      <p>💻 Developer</p>
+      <p>🎨 Designer</p>
+      <p>🚀 Learner</p>
     </div>
-  </section>
+  </div>
+</section>
 
-  <!-- Contact -->
-  <section id="contact" class="hidden">
-    <h2>Contact</h2>
-    <p>Email: bosepriyanshi0805@gmail.com</p>
-    <p>Phone: +91 XXXXX XXXXX</p>
-    <p>Location: Ahmedabad, India</p>
-  </section>
+<!-- About -->
+<section id="about" class="card hidden">
+  <h2>About Me</h2>
+  <p>
+    I am a frontend developer passionate about building clean and user-friendly interfaces.
+    I enjoy creating visually appealing and interactive web experiences.
+  </p>
+</section>
+
+<!-- Skills -->
+<section id="skills" class="card hidden">
+  <h2>Skills</h2>
+  <div class="skills-grid">
+    <span>HTML</span>
+    <span>CSS</span>
+    <span>JavaScript</span>
+    <span>React</span>
+    <span>Git</span>
+    <span>UI/UX</span>
+  </div>
+</section>
+
+<!-- Projects -->
+<section id="projects" class="card hidden">
+  <h2>Projects</h2>
+
+  <div class="projects-container">
+    <div class="project-card">
+      <h3>Portfolio</h3>
+      <p>Modern personal portfolio</p>
+      <a href="#">View</a>
+    </div>
+
+    <div class="project-card">
+      <h3>Todo App</h3>
+      <p>Task manager</p>
+      <a href="#">View</a>
+    </div>
+
+    <div class="project-card">
+      <h3>Weather App</h3>
+      <p>Live API app</p>
+      <a href="#">View</a>
+    </div>
+  </div>
+</section>
+
+<!-- Contact -->
+<section id="contact" class="card hidden">
+  <h2>Contact</h2>
+  <p>Email: bosepriyanshi0805@gmail.com</p>
+  <p>Location: Ahmedabad, India</p>
+</section>
 
 <script>
-  // Smooth scroll for button
-  document.getElementById("contactBtn").addEventListener("click", () => {
-    document.getElementById("contact").scrollIntoView({ behavior: "smooth" });
+/* Smooth scroll */
+document.getElementById("contactBtn").onclick = () => {
+  document.getElementById("contact").scrollIntoView({ behavior: "smooth" });
+};
+
+/* Scroll reveal + active nav */
+const sections = document.querySelectorAll("section");
+const navLinks = document.querySelectorAll(".nav-link");
+
+window.addEventListener("scroll", () => {
+
+  // progress bar
+  let scrollTop = document.documentElement.scrollTop;
+  let height = document.documentElement.scrollHeight - document.documentElement.clientHeight;
+  document.getElementById("progressBar").style.width = (scrollTop / height) * 100 + "%";
+
+  let current = "";
+
+  sections.forEach(section => {
+    const top = section.offsetTop - 100;
+    if (scrollY >= top) current = section.id;
+
+    if (section.getBoundingClientRect().top < window.innerHeight - 100) {
+      section.classList.add("show");
+    }
   });
 
-  // Scroll reveal + active nav
-  const sections = document.querySelectorAll("section");
-  const navLinks = document.querySelectorAll(".nav-link");
-
-  window.addEventListener("scroll", () => {
-    let current = "";
-
-    sections.forEach(section => {
-      const sectionTop = section.offsetTop - 80;
-
-      if (window.scrollY >= sectionTop) {
-        current = section.getAttribute("id");
-      }
-
-      const rect = section.getBoundingClientRect();
-      if (rect.top < window.innerHeight - 100) {
-        section.classList.add("show");
-      }
-    });
-
-    navLinks.forEach(link => {
-      link.classList.remove("active");
-      if (link.getAttribute("href") === "#" + current) {
-        link.classList.add("active");
-      }
-    });
+  navLinks.forEach(link => {
+    link.classList.remove("active");
+    if (link.getAttribute("href") === "#" + current) {
+      link.classList.add("active");
+    }
   });
+});
 
-  // Dark mode
-  const toggleBtn = document.getElementById("darkModeToggle");
+/* Dark mode */
+document.getElementById("darkModeToggle").onclick = () => {
+  document.body.classList.toggle("dark-mode");
+};
 
-  toggleBtn.addEventListener("click", () => {
-    document.body.classList.toggle("dark-mode");
+/* Mobile menu */
+document.getElementById("menuToggle").onclick = () => {
+  document.getElementById("navLinks").classList.toggle("open");
+};
 
-    toggleBtn.textContent = 
-      document.body.classList.contains("dark-mode")
-      ? "☀️ Light Mode"
-      : "🌙 Dark Mode";
-  });
+/* Typing effect */
+const text = ["Frontend Developer", "UI Designer", "Web Creator"];
+let i = 0, j = 0, currentText = "", isDeleting = false;
+
+function type() {
+  currentText = text[i];
+
+  if (isDeleting) {
+    j--;
+  } else {
+    j++;
+  }
+
+  document.getElementById("typing").textContent = currentText.slice(0, j);
+
+  if (!isDeleting && j === currentText.length) {
+    isDeleting = true;
+    setTimeout(type, 1000);
+    return;
+  }
+
+  if (isDeleting && j === 0) {
+    isDeleting = false;
+    i = (i + 1) % text.length;
+  }
+
+  setTimeout(type, isDeleting ? 50 : 100);
+}
+
+type();
 </script>
 
 </body>
