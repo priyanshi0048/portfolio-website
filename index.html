@@ -3,77 +3,91 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Reusable UI Components</title>
+    <title>ElectroMart</title>
     <link rel="stylesheet" href="style.css">
 </head>
 
 <body>
 
-<div class="container">
-
-    <!-- 🔥 HERO SECTION (TOP PART) -->
-    <div class="hero">
-        <h2>GlowBeauty Store</h2>
-        <p>Discover the latest fashion frocks & dresses</p>
-        <button class="hero-btn">Shop Now</button>
+<!-- NAVBAR -->
+<nav class="navbar">
+    <h2>ElectroMart</h2>
+    <div class="nav-links">
+        <a href="#">Home</a>
+        <a href="#">Products</a>
+        <a href="#">Deals</a>
+        <a href="#">Contact</a>
     </div>
+</nav>
 
-    <h1 class="title">Reusable UI Components</h1>
+<!-- HERO SECTION -->
+<section class="hero">
+    <h1>Latest Electronic Gadgets</h1>
+    <p>Upgrade your tech with the best devices</p>
+    <button class="hero-btn">Shop Now</button>
+</section>
 
-    <!-- NAVBAR -->
-    <h2 class="section-title">Navbar Component</h2>
+<!-- PRODUCTS -->
+<section class="products">
+    <h2 class="section-title">Featured Products</h2>
 
-    <div class="navbar-box">
-        <h2>GlowBeauty</h2>
-        <div class="nav-links">
-            <a href="#">Home</a>
-            <a href="#">Products</a>
-            <a href="#">Offers</a>
-            <a href="#">Contact</a>
+    <div class="product-grid">
+
+        <!-- Laptop -->
+        <div class="card">
+            <img src="https://images.pexels.com/photos/18105/pexels-photo.jpg">
+            <h3>Laptop</h3>
+            <p class="price">₹93,360</p>
+            <button class="btn primary">Add to Cart</button>
         </div>
+
+        <!-- Smartphone -->
+        <div class="card">
+            <img src="https://images.pexels.com/photos/607812/pexels-photo-607812.jpeg">
+            <h3>Smartphone</h3>
+            <p class="price">₹21,000</p>
+            <button class="btn primary">Add to Cart</button>
+        </div>
+
+        <!-- Headphones -->
+        <div class="card">
+            <img src="https://images.pexels.com/photos/3394664/pexels-photo-3394664.jpeg">
+            <h3>Headphones</h3>
+            <p class="price">₹4,999</p>
+            <button class="btn primary">Add to Cart</button>
+        </div>
+
+        <!-- Smart Watch -->
+        <div class="card">
+            <img src="https://images.pexels.com/photos/437037/pexels-photo-437037.jpeg">
+            <h3>Smart Watch</h3>
+            <p class="price">₹2,299</p>
+            <button class="btn primary">Add to Cart</button>
+        </div>
+
+        <!-- Camera -->
+        <div class="card">
+            <img src="https://images.pexels.com/photos/51383/photo-camera-subject-photographer-51383.jpeg">
+            <h3>Camera</h3>
+            <p class="price">₹15,999</p>
+            <button class="btn primary">Add to Cart</button>
+        </div>
+
+        <!-- Tablet -->
+        <div class="card">
+            <img src="https://images.pexels.com/photos/1334597/pexels-photo-1334597.jpeg">
+            <h3>Tablet</h3>
+            <p class="price">₹23,999</p>
+            <button class="btn primary">Add to Cart</button>
+        </div>
+
     </div>
+</section>
 
-    <!-- BUTTONS -->
-    <h2 class="section-title">Button Components</h2>
-
-    <div class="button-box">
-        <button class="btn primary">Buy Now</button>
-        <button class="btn dark">Add to Cart</button>
-        <button class="btn outline">View Details</button>
-    </div>
-
-    <!-- PRODUCTS -->
-    <h2 class="section-title">Product Card Components</h2>
-
-    <div class="product-container">
-
-        <div class="card">
-            <img src="https://images.pexels.com/photos/1488463/pexels-photo-1488463.jpeg?auto=compress&cs=tinysrgb&w=400">
-            <h3>Elegant Dress</h3>
-            <p class="price">$25</p>
-        </div>
-
-        <div class="card">
-            <img src="https://images.pexels.com/photos/1755428/pexels-photo-1755428.jpeg?auto=compress&cs=tinysrgb&w=400">
-            <h3>Party Wear Dress</h3>
-            <p class="price">$30</p>
-        </div>
-
-        <div class="card">
-            <img src="https://images.pexels.com/photos/994234/pexels-photo-994234.jpeg?auto=compress&cs=tinysrgb&w=400">
-            <h3>Casual Summer Dress</h3>
-            <p class="price">$22</p>
-        </div>
-
-        <div class="card">
-            <img src="https://images.pexels.com/photos/1536619/pexels-photo-1536619.jpeg?auto=compress&cs=tinysrgb&w=400">
-            <h3>Floral Summer Dress</h3>
-            <p class="price">$28</p>
-        </div>
-
-    </div>
-
-</div>
+<!-- FOOTER -->
+<footer class="footer">
+    <p>© 2026 ElectroMart | All Rights Reserved</p>
+</footer>
 
 </body>
 </html>
