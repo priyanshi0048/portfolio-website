@@ -1,11 +1,10 @@
 
 /* BACKGROUND */
 body {
-    margin: 0;
-    font-family: Arial, sans-serif;
-    background: #f4f6ff;
     display: flex;
     justify-content: center;
+    align-items: center;
+    min-height: 100vh;
 }
 
 /* CONTAINER */
@@ -62,11 +61,8 @@ body {
     text-align: center;
 }
 
-.nav-links a {
-    color: white;
-    margin: 5px;
-    text-decoration: none;
-    font-size: 13px;
+.nav-links {
+    margin-top: 8px;
 }
 
 /* BUTTONS */
@@ -110,7 +106,7 @@ body {
 /* IMAGE FIX */
 .card img {
     width: 100%;
-    height: 75px;
+    height: 120px;
     object-fit: cover;
     object-position: center;
     border-radius: 8px;
