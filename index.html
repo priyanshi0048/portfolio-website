@@ -8,100 +8,154 @@
 </head>
 <body>
 
-<!-- HEADER -->
-<header>
-    <h1>Tech <span>Store</span></h1>
+<header class="header">
+    <div class="container header-flex">
+        <h1 class="logo">Tech <span>Store</span></h1>
 
-    <nav>
-        <a href="#offers">Offers</a>
-        <a href="#why">Why Us</a>
-        <a href="#products">Products</a>
-        <a href="#about">About</a>
-    </nav>
+        <nav>
+            <a href="#offers">Offers</a>
+            <a href="#why">Why Us</a>
+            <a href="#products">Products</a>
+            <a href="#about">About</a>
+        </nav>
 
-    <div class="cart">🛒 Cart: <span id="cartCount">0</span></div>
+        <div class="cart">🛒 <span id="cartCount">0</span></div>
+    </div>
 </header>
 
-<!-- HERO -->
 <section class="hero">
-    <h2>Upgrade Your Tech Lifestyle</h2>
-    <p>Premium electronic gadgets at the best prices with trusted quality.</p>
+    <div class="container">
+        <h2>Upgrade Your Tech Lifestyle</h2>
+        <p>Premium electronic gadgets at the best prices with trusted quality.</p>
+        <a href="#products" class="btn">Shop Now</a>
+    </div>
 </section>
 
-<!-- DISCOUNT OFFERS -->
 <section id="offers" class="section">
-    <h2>🔥 Discount Offers</h2>
-    <div class="box-container">
-        <div class="box">20% OFF on Headphones</div>
-        <div class="box">15% OFF on Smart Watches</div>
-        <div class="box">Up to 25% OFF on Laptops</div>
+    <div class="container">
+        <h2>🔥 Discount Offers</h2>
+        <div class="box-container">
+            <div class="box">20% OFF on Headphones</div>
+            <div class="box">15% OFF on Smart Watches</div>
+            <div class="box">Up to 25% OFF on Laptops</div>
+        </div>
     </div>
 </section>
 
-<!-- WHY SHOP WITH US -->
-<section id="why" class="section">
-    <h2>⭐ Why Shop With Us</h2>
-    <div class="box-container">
-        <div class="box">✔ High Quality Products</div>
-        <div class="box">✔ Fast & Secure Delivery</div>
-        <div class="box">✔ Best Price Guarantee</div>
-        <div class="box">✔ 24/7 Customer Support</div>
+<section id="why" class="section light">
+    <div class="container">
+        <h2>⭐ Why Shop With Us</h2>
+        <div class="box-container">
+            <div class="box">✔ High Quality Products</div>
+            <div class="box">✔ Fast Delivery</div>
+            <div class="box">✔ Best Prices</div>
+            <div class="box">✔ 24/7 Support</div>
+        </div>
     </div>
 </section>
 
-<!-- PRODUCTS -->
+<!-- UPDATED PRODUCTS -->
 <section id="products" class="section">
-    <h2>🛍 Featured Products</h2>
+    <div class="container">
+        <h2>🛍 Featured Products</h2>
 
-    <div class="products">
+        <div class="products">
 
-        <div class="card">
-            <span class="badge">20% OFF</span>
-            <img src="https://images.unsplash.com/photo-1505740420928-5e560c06d30e?auto=format&fit=crop&w=600&q=60">
-            
-            <h3>Headphones</h3>
-            <p class="desc">Noise cancelling premium sound experience.</p>
-            <div class="rating">★★★★☆</div>
+            <!-- Headphones -->
+            <div class="card">
+                <span class="badge">20% OFF</span>
+                <img src="https://images.unsplash.com/photo-1505740420928-5e560c06d30e?auto=format&fit=crop&w=600&q=60">
+                <div class="card-content">
+                    <h3>Headphones</h3>
+                    <p class="desc">Noise cancelling premium sound experience.</p>
+                    <div class="rating">★★★★☆</div>
+                    <p class="quick">⚡ Immersive sound instantly</p>
+                    <button onclick="addToCart()">Add to Cart</button>
+                </div>
+            </div>
 
-            <p class="quick">⚡ Quick Add: Get immersive sound instantly</p>
-            <button onclick="addToCart()">Add to Cart</button>
+            <!-- Smart Watch -->
+            <div class="card">
+                <span class="badge">15% OFF</span>
+                <img src="https://images.unsplash.com/photo-1523275335684-37898b6baf30?auto=format&fit=crop&w=600&q=60">
+                <div class="card-content">
+                    <h3>SmartWatch</h3>
+                    <p class="desc">Track fitness, heart rate & notifications.</p>
+                    <div class="rating">★★★★★</div>
+                    <p class="quick">⚡ Stay smart daily</p>
+                    <button onclick="addToCart()">Add to Cart</button>
+                </div>
+            </div>
+
+            <!-- Laptop -->
+            <div class="card">
+                <span class="badge">25% OFF</span>
+                <img src="https://images.unsplash.com/photo-1517336714731-489689fd1ca8?auto=format&fit=crop&w=600&q=60">
+                <div class="card-content">
+                    <h3>Laptop</h3>
+                    <p class="desc">High performance for coding & gaming.</p>
+                    <div class="rating">★★★★☆</div>
+                    <p class="quick">⚡ Boost productivity</p>
+                    <button onclick="addToCart()">Add to Cart</button>
+                </div>
+            </div>
+
+            <!-- NEW: Smartphone -->
+            <div class="card">
+                <span class="badge">10% OFF</span>
+                <img src="https://images.unsplash.com/photo-1511707171634-5f897ff02aa9?auto=format&fit=crop&w=600&q=60">
+                <div class="card-content">
+                    <h3>Smartphone</h3>
+                    <p class="desc">Latest features with powerful performance.</p>
+                    <div class="rating">★★★★★</div>
+                    <p class="quick">⚡ Stay connected everywhere</p>
+                    <button onclick="addToCart()">Add to Cart</button>
+                </div>
+            </div>
+
+            <!-- NEW: Speaker -->
+            <div class="card">
+                <span class="badge">18% OFF</span>
+                <img src="https://images.unsplash.com/photo-1587829741301-dc798b83add3?auto=format&fit=crop&w=600&q=60">
+                <div class="card-content">
+                    <h3>Wireless keyboard</h3>
+                   <p class="desc">Wireless keyboard with smooth typing and multi-device connectivity.</p>
+                    <div class="rating">★★★★☆</div>
+                    <p class="quick">⚡ Comfortable typing without cables</p>
+                    <button onclick="addToCart()">Add to Cart</button>
+                </div>
+            </div>
+
+            <!-- NEW: Mouse -->
+            <div class="card">
+                <span class="badge">12% OFF</span>
+                <img src="https://images.unsplash.com/photo-1587202372775-e229f172b9d7?auto=format&fit=crop&w=600&q=60">
+                <div class="card-content">
+                    <h3>Gaming Mouse</h3>
+                    <p class="desc">High precision mouse for gaming & work.</p>
+                    <div class="rating">★★★★☆</div>
+                    <p class="quick">⚡ Smooth and accurate control</p>
+                    <button onclick="addToCart()">Add to Cart</button>
+                </div>
+            </div>
+
         </div>
-
-        <div class="card">
-            <span class="badge">15% OFF</span>
-            <img src="https://images.unsplash.com/photo-1523275335684-37898b6baf30?auto=format&fit=crop&w=600&q=60">
-
-            <h3>Smart Watch</h3>
-            <p class="desc">Track fitness, heart rate & notifications.</p>
-            <div class="rating">★★★★★</div>
-
-            <p class="quick">⚡ Quick Add: Stay smart and active daily</p>
-            <button onclick="addToCart()">Add to Cart</button>
-        </div>
-
-        <div class="card">
-            <span class="badge">25% OFF</span>
-            <img src="https://images.unsplash.com/photo-1517336714731-489689fd1ca8?auto=format&fit=crop&w=600&q=60">
-
-            <h3>Laptop</h3>
-            <p class="desc">High performance for coding and gaming.</p>
-            <div class="rating">★★★★☆</div>
-
-            <p class="quick">⚡ Quick Add: Power up your productivity</p>
-            <button onclick="addToCart()">Add to Cart</button>
-        </div>
-
     </div>
 </section>
 
-<!-- ABOUT -->
-<section id="about" class="section about">
-    <h2>About Us</h2>
-    <p>
-        Tech Store is a modern e-commerce platform offering high-quality electronic gadgets at affordable prices.
-        We focus on trust, quality, and customer satisfaction.
-    </p>
+<section id="about" class="section light">
+    <div class="container">
+        <h2>About Us</h2>
+        <p>
+            Tech Store is a modern e-commerce platform offering high-quality electronic gadgets at affordable prices.
+            We focus on trust, quality, and customer satisfaction.
+        </p>
+    </div>
 </section>
+
+<footer>
+    <p>© 2026 Tech Store | All Rights Reserved</p>
+</footer>
 
 <script>
 let cart = 0;
