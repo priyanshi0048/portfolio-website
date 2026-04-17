@@ -1,155 +1,184 @@
 * {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-    font-family: Arial, sans-serif;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Segoe UI', sans-serif;
+  background: #f2f4f8;
+  color: #222;
+}
+
+/* CENTER WEBSITE */
+.app {
+  max-width: 1100px;
+  margin: auto;
+  padding: 20px;
 }
 
 /* HEADER */
-header {
-    background: linear-gradient(90deg, #3b5bff, #6a5cff);
-    color: white;
-    padding: 15px;
-    text-align: center;
+.header {
+  text-align: center;
+  padding: 40px 10px 10px;
 }
 
-header h1 span {
-    color: #ffd54a;
+.header h1 {
+  font-size: 38px;
+  font-weight: 700;
 }
 
-nav {
-    margin-top: 10px;
+.header p {
+  color: #666;
 }
 
-nav a {
-    color: white;
-    margin: 0 10px;
-    text-decoration: none;
+/* ⭐ CENTERED SALE BOX */
+.sale-wrapper {
+  display: flex;
+  justify-content: center;
+  margin: 25px 0;
 }
 
-.cart {
-    margin-top: 10px;
-    background: white;
-    color: #3b5bff;
-    display: inline-block;
-    padding: 8px 15px;
-    border-radius: 20px;
-    font-weight: bold;
+.sale-card {
+  width: 90%;
+  max-width: 500px;
+  background: linear-gradient(135deg, #ff416c, #ff4b2b);
+  color: white;
+  text-align: center;
+  padding: 25px 20px;
+  border-radius: 18px;
+  box-shadow: 0 10px 30px rgba(0,0,0,0.2);
 }
 
-/* HERO */
-.hero {
-    text-align: center;
-    padding: 40px 20px;
-    background: #f0f4ff;
+.sale-icon {
+  font-size: 28px;
 }
 
-/* SECTION */
-.section {
-    padding: 40px 20px;
-    text-align: center;
+.sale-text {
+  font-size: 26px;
+  font-weight: 700;
+  margin-top: 5px;
 }
 
-/* BOX SECTIONS */
-.box-container {
-    display: flex;
-    justify-content: center;
-    gap: 15px;
-    flex-wrap: wrap;
+.sale-subtext {
+  font-size: 13px;
+  opacity: 0.9;
+  margin-top: 6px;
 }
 
-.box {
-    background: #e7f0ff;
-    padding: 15px;
-    border-radius: 8px;
-    min-width: 200px;
-    font-weight: bold;
-}
-
-/* PRODUCTS */
-.products {
-    display: flex;
-    justify-content: center;
-    gap: 20px;
-    flex-wrap: wrap;
+/* GRID */
+.grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 25px;
+  margin-top: 20px;
 }
 
 /* CARD */
 .card {
-    width: 260px;
-    background: white;
-    border-radius: 10px;
-    overflow: hidden;
-    box-shadow: 0 5px 15px rgba(0,0,0,0.1);
-    transition: 0.3s;
-    position: relative;
+  position: relative;
+  background: white;
+  border-radius: 16px;
+  overflow: hidden;
+  box-shadow: 0 8px 20px rgba(0,0,0,0.08);
+  transition: 0.3s;
 }
 
 .card:hover {
-    transform: translateY(-5px);
+  transform: translateY(-8px);
 }
 
-/* ⭐ PERFECT SQUARE IMAGES */
+/* IMAGE */
 .card img {
-    width: 100%;
-    height: 260px;
-    object-fit: cover;
+  width: 100%;
+  height: 200px;
+  object-fit: cover;
 }
 
 /* BADGE */
 .badge {
-    position: absolute;
-    top: 10px;
-    left: 10px;
-    background: red;
-    color: white;
-    padding: 5px 10px;
-    font-size: 12px;
-    border-radius: 5px;
+  position: absolute;
+  top: 10px;
+  left: 10px;
+  background: red;
+  color: white;
+  padding: 5px 10px;
+  border-radius: 20px;
+  font-size: 12px;
 }
 
-/* TEXT */
-.card h3 {
-    margin: 10px 0;
+/* OFFER INSIDE IMAGE */
+.offer {
+  position: absolute;
+  top: 10px;
+  left: 80px;
+  background: #1a73e8;
+  color: white;
+  padding: 5px 10px;
+  border-radius: 20px;
+  font-size: 12px;
 }
 
-.desc {
-    font-size: 13px;
-    color: #555;
-    padding: 0 10px;
+/* BODY */
+.card-body {
+  padding: 12px;
 }
 
+.card-body h3 {
+  margin-bottom: 5px;
+}
+
+/* RATING */
 .rating {
-    color: #ffb400;
-    margin: 5px;
+  color: gold;
+  margin-bottom: 5px;
 }
 
-/* QUICK ADD TEXT */
-.quick {
-    font-size: 12px;
-    color: #333;
-    font-weight: bold;
-    padding: 5px 10px;
+/* FOOTER */
+.card-footer {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+/* PRICE */
+.price {
+  color: #1a73e8;
+  font-weight: bold;
 }
 
 /* BUTTON */
-.card button {
-    width: 100%;
-    padding: 10px;
-    border: none;
-    background: #3b5bff;
-    color: white;
-    cursor: pointer;
+button {
+  padding: 8px 12px;
+  border: none;
+  background: #1a73e8;
+  color: white;
+  border-radius: 10px;
+  cursor: pointer;
 }
 
-.card button:hover {
-    background: #2c45cc;
+/* CART */
+.cart {
+  margin: 40px auto;
+  background: white;
+  padding: 20px;
+  border-radius: 14px;
+  text-align: center;
+  box-shadow: 0 5px 15px rgba(0,0,0,0.1);
 }
 
-/* ABOUT */
-.about p {
-    max-width: 700px;
-    margin: auto;
-    color: #444;
-    line-height: 1.6;
+.clear-btn {
+  margin-top: 10px;
+  background: crimson;
+}
+
+/* MOBILE */
+@media (max-width: 600px) {
+  .header h1 {
+    font-size: 28px;
+  }
+
+  .grid {
+    grid-template-columns: 1fr;
+  }
 }
