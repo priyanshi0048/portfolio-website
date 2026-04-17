@@ -1,170 +1,133 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Tech Store</title>
-    <link rel="stylesheet" href="style.css">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Electronic Store</title>
+  <link rel="stylesheet" href="style.css"/>
 </head>
+
 <body>
 
-<header class="header">
-    <div class="container header-flex">
-        <h1 class="logo">Tech <span>Store</span></h1>
+  <div class="app">
 
-        <nav>
-            <a href="#offers">Offers</a>
-            <a href="#why">Why Us</a>
-            <a href="#products">Products</a>
-            <a href="#about">About</a>
-        </nav>
+    <!-- HEADER -->
+    <header class="header">
+      <h1>Electronic Appliances</h1>
+      <p>Premium Electronic Appliances Store</p>
+    </header>
 
-        <div class="cart">🛒 <span id="cartCount">0</span></div>
+    <!-- CENTERED MEGA SALE BOX -->
+    <div class="sale-wrapper">
+      <div class="sale-card">
+        <div class="sale-icon">🔥</div>
+        <div class="sale-text">Mega Sale</div>
+        <div class="sale-subtext">Limited Time Offers • Best Prices • Hurry Up!</div>
+      </div>
     </div>
-</header>
 
-<section class="hero">
-    <div class="container">
-        <h2>Upgrade Your Tech Lifestyle</h2>
-        <p>Premium electronic gadgets at the best prices with trusted quality.</p>
-        <a href="#products" class="btn">Shop Now</a>
-    </div>
-</section>
+    <!-- PRODUCTS -->
+    <main class="container">
+      <section class="grid">
 
-<section id="offers" class="section">
-    <div class="container">
-        <h2>🔥 Discount Offers</h2>
-        <div class="box-container">
-            <div class="box">20% OFF on Headphones</div>
-            <div class="box">15% OFF on Smart Watches</div>
-            <div class="box">Up to 25% OFF on Laptops</div>
+        <!-- CARD 1 -->
+        <div class="card">
+          <span class="badge">New</span>
+          <span class="offer">20% OFF</span>
+          <img src="https://images.unsplash.com/photo-1505740420928-5e560c06d30e?auto=format&fit=crop&w=600&q=60">
+
+          <div class="card-body">
+            <h3>Wireless Headphones</h3>
+            <div class="rating">⭐⭐⭐⭐☆</div>
+            <p>High quality sound with deep bass and long battery life.</p>
+
+            <div class="card-footer">
+              <span class="price">₹10,000</span>
+              <button onclick="addToCart(10000)">Buy Now</button>
+            </div>
+          </div>
         </div>
-    </div>
-</section>
 
-<section id="why" class="section light">
-    <div class="container">
-        <h2>⭐ Why Shop With Us</h2>
-        <div class="box-container">
-            <div class="box">✔ High Quality Products</div>
-            <div class="box">✔ Fast Delivery</div>
-            <div class="box">✔ Best Prices</div>
-            <div class="box">✔ 24/7 Support</div>
+        <!-- CARD 2 -->
+        <div class="card">
+          <span class="badge">Hot</span>
+          <span class="offer">15% OFF</span>
+          <img src="https://images.unsplash.com/photo-1523275335684-37898b6baf30?auto=format&fit=crop&w=600&q=60">
+
+          <div class="card-body">
+            <h3>Smart Watch</h3>
+            <div class="rating">⭐⭐⭐⭐⭐</div>
+            <p>Track your fitness, heart rate and notifications easily.</p>
+
+            <div class="card-footer">
+              <span class="price">₹1,999</span>
+              <button onclick="addToCart(1999)">Buy Now</button>
+            </div>
+          </div>
         </div>
-    </div>
-</section>
 
-<!-- UPDATED PRODUCTS -->
-<section id="products" class="section">
-    <div class="container">
-        <h2>🛍 Featured Products</h2>
+        <!-- CARD 3 -->
+        <div class="card">
+          <span class="badge">Sale</span>
+          <span class="offer">30% OFF</span>
+          <img src="https://images.unsplash.com/photo-1527814050087-3793815479db?auto=format&fit=crop&w=600&q=60">
 
-        <div class="products">
+          <div class="card-body">
+            <h3>Gaming Mouse</h3>
+            <div class="rating">⭐⭐⭐⭐☆</div>
+            <p>Ergonomic design with RGB lights and fast response.</p>
 
-            <!-- Headphones -->
-            <div class="card">
-                <span class="badge">20% OFF</span>
-                <img src="https://images.unsplash.com/photo-1505740420928-5e560c06d30e?auto=format&fit=crop&w=600&q=60">
-                <div class="card-content">
-                    <h3>Headphones</h3>
-                    <p class="desc">Noise cancelling premium sound experience.</p>
-                    <div class="rating">★★★★☆</div>
-                    <p class="quick">⚡ Immersive sound instantly</p>
-                    <button onclick="addToCart()">Add to Cart</button>
-                </div>
+            <div class="card-footer">
+              <span class="price">₹899</span>
+              <button onclick="addToCart(899)">Buy Now</button>
             </div>
-
-            <!-- Smart Watch -->
-            <div class="card">
-                <span class="badge">15% OFF</span>
-                <img src="https://images.unsplash.com/photo-1523275335684-37898b6baf30?auto=format&fit=crop&w=600&q=60">
-                <div class="card-content">
-                    <h3>SmartWatch</h3>
-                    <p class="desc">Track fitness, heart rate & notifications.</p>
-                    <div class="rating">★★★★★</div>
-                    <p class="quick">⚡ Stay smart daily</p>
-                    <button onclick="addToCart()">Add to Cart</button>
-                </div>
-            </div>
-
-            <!-- Laptop -->
-            <div class="card">
-                <span class="badge">25% OFF</span>
-                <img src="https://images.unsplash.com/photo-1517336714731-489689fd1ca8?auto=format&fit=crop&w=600&q=60">
-                <div class="card-content">
-                    <h3>Laptop</h3>
-                    <p class="desc">High performance for coding & gaming.</p>
-                    <div class="rating">★★★★☆</div>
-                    <p class="quick">⚡ Boost productivity</p>
-                    <button onclick="addToCart()">Add to Cart</button>
-                </div>
-            </div>
-
-            <!-- NEW: Smartphone -->
-            <div class="card">
-                <span class="badge">10% OFF</span>
-                <img src="https://images.unsplash.com/photo-1511707171634-5f897ff02aa9?auto=format&fit=crop&w=600&q=60">
-                <div class="card-content">
-                    <h3>Smartphone</h3>
-                    <p class="desc">Latest features with powerful performance.</p>
-                    <div class="rating">★★★★★</div>
-                    <p class="quick">⚡ Stay connected everywhere</p>
-                    <button onclick="addToCart()">Add to Cart</button>
-                </div>
-            </div>
-
-            <!-- NEW: Speaker -->
-            <div class="card">
-                <span class="badge">18% OFF</span>
-                <img src="https://images.unsplash.com/photo-1587829741301-dc798b83add3?auto=format&fit=crop&w=600&q=60">
-                <div class="card-content">
-                    <h3>Wireless keyboard</h3>
-                   <p class="desc">Wireless keyboard with smooth typing and multi-device connectivity.</p>
-                    <div class="rating">★★★★☆</div>
-                    <p class="quick">⚡ Comfortable typing without cables</p>
-                    <button onclick="addToCart()">Add to Cart</button>
-                </div>
-            </div>
-
-            <!-- NEW: Mouse -->
-            <div class="card">
-                <span class="badge">12% OFF</span>
-                <img src="https://images.unsplash.com/photo-1587202372775-e229f172b9d7?auto=format&fit=crop&w=600&q=60">
-                <div class="card-content">
-                    <h3>Gaming Mouse</h3>
-                    <p class="desc">High precision mouse for gaming & work.</p>
-                    <div class="rating">★★★★☆</div>
-                    <p class="quick">⚡ Smooth and accurate control</p>
-                    <button onclick="addToCart()">Add to Cart</button>
-                </div>
-            </div>
-
+          </div>
         </div>
+
+        <!-- CARD 4 -->
+        <div class="card">
+          <span class="badge">Popular</span>
+          <span class="offer">25% OFF</span>
+          <img src="https://images.unsplash.com/photo-1608043152269-423dbba4e7e1?auto=format&fit=crop&w=600&q=60">
+
+          <div class="card-body">
+            <h3>Bluetooth Speaker</h3>
+            <div class="rating">⭐⭐⭐⭐☆</div>
+            <p>Powerful sound with compact and portable design.</p>
+
+            <div class="card-footer">
+              <span class="price">₹1,299</span>
+              <button onclick="addToCart(1299)">Buy Now</button>
+            </div>
+          </div>
+        </div>
+
+      </section>
+    </main>
+
+    <!-- CART -->
+    <div class="cart">
+      <h2>🛒 Your Cart</h2>
+      <p id="total">Total: ₹0</p>
+      <button class="clear-btn" onclick="clearCart()">Clear Cart</button>
     </div>
-</section>
 
-<section id="about" class="section light">
-    <div class="container">
-        <h2>About Us</h2>
-        <p>
-            Tech Store is a modern e-commerce platform offering high-quality electronic gadgets at affordable prices.
-            We focus on trust, quality, and customer satisfaction.
-        </p>
-    </div>
-</section>
+  </div>
 
-<footer>
-    <p>© 2026 Tech Store | All Rights Reserved</p>
-</footer>
+  <!-- JS -->
+  <script>
+    let total = 0;
 
-<script>
-let cart = 0;
+    function addToCart(price) {
+      total += price;
+      document.getElementById("total").innerText = "Total: ₹" + total;
+    }
 
-function addToCart() {
-    cart++;
-    document.getElementById("cartCount").innerText = cart;
-}
-</script>
+    function clearCart() {
+      total = 0;
+      document.getElementById("total").innerText = "Total: ₹0";
+    }
+  </script>
 
 </body>
 </html>
