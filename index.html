@@ -11,6 +11,7 @@
       <!-- NAVBAR -->
 <nav class="navbar">
   <div class="logo">My Store</div>
+  <input type="text" id="search" placeholder="Search products..." onkeyup="searchProduct()">
   <ul class="nav-links">
     <li><a href="#">Home</a></li>
     <li><a href="#">Products</a></li>
@@ -147,6 +148,58 @@
             </div>
           </div>
         </div>
+        <!-- CARD 7 -->
+        <div class="card">
+          <span class="badge">Premium</span>
+          <span class="offer">15% OFF</span>
+          <img src="https://media.istockphoto.com/id/1203787084/photo/elegant-white-gold-necklace-with-diamonds.jpg?s=1024x1024&w=is&k=20&c=Ebj8gaEY8CKDrwew81O6xpuwjTHotfRvjNXdyHFlouA=" alt="Necklace">
+
+          <div class="card-body">
+            <h3>Necklace</h3>
+            <div class="rating">⭐⭐⭐⭐⭐</div>
+            <p>Elegant white gold necklace with diamonds. Small silver charm necklace with gemstones</p>
+
+            <div class="card-footer">
+              <span class="price">₹360</span>
+              <button onclick="addToCart(360)">Buy Now</button>
+            </div>
+          </div>
+        </div>
+          <!-- CARD 8 -->
+        <div class="card">
+          <span class="badge">Premium</span>
+          <span class="offer">20% OFF</span>
+          <img src="https://media.istockphoto.com/id/182786637/photo/diamond-ring.jpg?s=1024x1024&w=is&k=20&c=CpvxOlJ8ZQ7b1qLlsvlKaBBDDO09buyETzffkm8tOYA=" alt="Diamond Ring">
+
+          <div class="card-body">
+            <h3>Diamond Ring</h3>
+            <div class="rating">⭐⭐⭐⭐⭐</div>
+            <p>A contemporary diamond ring. Round brilliant center stone with pave accents.</p>
+
+            <div class="card-footer">
+              <span class="price">₹7000</span>
+              <button onclick="addToCart(7000)">Buy Now</button>
+            </div>
+          </div>
+        </div>
+
+        <!-- CARD 6 -->
+        <div class="card">
+          <span class="badge">Premium</span>
+          <span class="offer">20% OFF</span>
+          <img src="https://media.istockphoto.com/id/627306438/photo/silver-diamond-ring.jpg?s=1024x1024&w=is&k=20&c=Cy70mx0J14Xq9DP7qqVYc_93h3eArHb-PxCHSgzTFV0=" alt="Diamond Ring">
+
+          <div class="card-body">
+            <h3>Diamond Ring</h3>
+            <div class="rating">⭐⭐⭐⭐⭐</div>
+            <p>Pave` diamonds fill this heart pendant cluster.</p>
+
+            <div class="card-footer">
+              <span class="price">₹6000</span>
+              <button onclick="addToCart(6000)">Buy Now</button>
+            </div>
+          </div>
+        </div>
       </section>
     </main>
 
@@ -158,25 +211,39 @@
     </div>
 
   </div>
-
-  <!-- JS -->
-  <script>
-    let total = 0;
-
-    function addToCart(price) {
-      total += price;
-      document.getElementById("total").innerText = "Total: ₹" + total;
-    }
-
-    function clearCart() {
-      total = 0;
-      document.getElementById("total").innerText = "Total: ₹0";
-    }
-  </script>
-
+ 
      <!-- FOOTER -->
 <footer class="footer">
   <p>© 2026 My Store | All Rights Reserved</p>
 </footer>
+
+<!-- JS -->
+ <script>
+  let total = 0;
+
+  function addToCart(price) {
+    total += price;
+    document.getElementById("total").innerText = "Total: ₹" + total;
+  }
+
+  function clearCart() {
+    total = 0;
+    document.getElementById("total").innerText = "Total: ₹0";
+  }
+
+function searchProduct() {
+  let input = document.getElementById("search").value.toLowerCase();
+  let cards = document.querySelectorAll(".card");
+
+  cards.forEach(card => {
+    let title = card.querySelector("h3").innerText.toLowerCase();
+    let desc = card.querySelector("p").innerText.toLowerCase();
+
+    card.style.display =
+      title.includes(input) || desc.includes(input) ? "" : "none";
+  });
+
+}
+</script>
 </body>
 </html>
