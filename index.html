@@ -6,164 +6,184 @@
 <title>ABC Institute</title>
 
 <style>
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-    font-family: Arial, sans-serif;
+:root{
+    --primary:#002147;
+    --secondary:#00a8ff;
+    --light:#f5f7fa;
 }
 
-/* Top Bar */
-.topbar {
-    background: #002147;
-    color: white;
-    padding: 15px;
-    display: flex;
-    align-items: center;
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:Arial;
 }
 
-.menu-btn {
-    font-size: 26px;
-    cursor: pointer;
-    margin-right: 15px;
+body{
+    background:var(--light);
 }
 
-/* Sidebar */
-.sidebar {
-    position: fixed;
-    left: -260px;
-    top: 0;
-    width: 260px;
-    height: 100%;
-    background: #001530;
-    transition: 0.3s;
-    padding-top: 20px;
-    z-index: 1000;
+/* TOP BAR */
+.topbar{
+    background:var(--primary);
+    color:white;
+    padding:15px;
+    display:flex;
+    align-items:center;
 }
 
-.sidebar a {
-    display: block;
-    color: white;
-    padding: 15px;
-    text-decoration: none;
-    border-bottom: 1px solid #333;
+.menu-btn{
+    font-size:26px;
+    cursor:pointer;
+    margin-right:15px;
 }
 
-.sidebar a:hover {
-    background: #00c3ff;
+/* SIDEBAR */
+.sidebar{
+    position:fixed;
+    left:-260px;
+    top:0;
+    width:260px;
+    height:100%;
+    background:var(--primary);
+    transition:0.3s;
+    padding-top:20px;
+    z-index:1000;
 }
 
-/* Active Sidebar */
-.sidebar.active {
-    left: 0;
+.sidebar a{
+    display:block;
+    color:white;
+    padding:15px;
+    text-decoration:none;
 }
 
-/* Overlay */
-.overlay {
-    position: fixed;
-    display: none;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
+.sidebar a:hover{
+    background:var(--secondary);
 }
 
-.overlay.active {
-    display: block;
+.sidebar.active{
+    left:0;
 }
 
-/* Header */
-header {
-    text-align: center;
-    padding: 30px;
-    background: linear-gradient(to right, #004e92, #000428);
-    color: white;
+/* OVERLAY */
+.overlay{
+    position:fixed;
+    display:none;
+    width:100%;
+    height:100%;
 }
 
-header img {
-    width: 80px;
+.overlay.active{
+    display:block;
 }
 
-/* Sections */
-section {
-    display: none;
-    padding: 30px;
+/* HEADER */
+header{
+    text-align:center;
+    padding:30px;
+    background:linear-gradient(to right,var(--primary),black);
+    color:white;
 }
 
-section.active {
-    display: block;
+header img{
+    width:90px;
 }
 
-/* Cards */
-.card-container {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 20px;
+/* IMAGE BOX */
+.img-box{
+    width:100%;
+    height:180px;
+    overflow:hidden;
+    border-radius:10px;
+    margin-bottom:10px;
 }
 
-.card {
-    flex: 1 1 300px;
-    background: #f4f4f4;
-    padding: 20px;
-    border-radius: 10px;
-    text-align: center;
-    transition: 0.3s;
+.img-box img{
+    width:100%;
+    height:100%;
+    object-fit:cover;
 }
 
-.card:hover {
-    transform: scale(1.05);
+/* PAGE */
+.page{
+    display:none;
+    padding:30px;
 }
 
-/* Footer */
-footer {
-    background: #002147;
-    color: white;
-    text-align: center;
-    padding: 15px;
+.page.active{
+    display:block;
 }
 
-/* Mobile */
-@media(max-width: 768px) {
-    .card-container {
-        flex-direction: column;
+/* CARDS */
+.card-container{
+    display:flex;
+    flex-wrap:wrap;
+    gap:20px;
+}
+
+.card{
+    flex:1 1 300px;
+    background:white;
+    padding:15px;
+    border-radius:10px;
+    text-align:center;
+}
+
+/* BUTTON */
+.btn{
+    display:inline-block;
+    margin-top:10px;
+    padding:8px 12px;
+    background:var(--secondary);
+    color:white;
+    border-radius:6px;
+    text-decoration:none;
+}
+
+/* FOOTER */
+footer{
+    background:var(--primary);
+    color:white;
+    text-align:center;
+    padding:15px;
+}
+
+/* MOBILE */
+@media(max-width:768px){
+    .card-container{
+        flex-direction:column;
     }
 }
 </style>
 
 <script>
-function toggleMenu() {
+function toggleMenu(){
     document.getElementById("sidebar").classList.toggle("active");
     document.getElementById("overlay").classList.toggle("active");
 }
 
-function showPage(pageId) {
-    // Hide all sections
-    let pages = document.querySelectorAll("section");
-    pages.forEach(page => page.classList.remove("active"));
+function showPage(id){
+    document.querySelectorAll(".page").forEach(p=>p.classList.remove("active"));
+    document.getElementById(id).classList.add("active");
 
-    // Show selected
-    document.getElementById(pageId).classList.add("active");
-
-    // Scroll to top
-    window.scrollTo({ top: 0, behavior: "smooth" });
-
-    // Close menu
     document.getElementById("sidebar").classList.remove("active");
     document.getElementById("overlay").classList.remove("active");
+
+    window.scrollTo(0,0);
 }
 </script>
-
 </head>
 
 <body>
 
-<!-- Top Bar -->
+<!-- TOPBAR -->
 <div class="topbar">
     <span class="menu-btn" onclick="toggleMenu()">☰</span>
     <h2>ABC Institute</h2>
 </div>
 
-<!-- Sidebar -->
+<!-- SIDEBAR -->
 <div id="sidebar" class="sidebar">
     <a onclick="showPage('home')">Home</a>
     <a onclick="showPage('about')">About</a>
@@ -176,46 +196,64 @@ function showPage(pageId) {
 <div id="overlay" class="overlay" onclick="toggleMenu()"></div>
 
 <!-- HOME -->
-<section id="home" class="active">
+<div id="home" class="page active">
 <header>
-    <img src="https://via.placeholder.com/80">
-    <h1>ABC Institute of Management</h1>
-    <p>🏆 Ranked #1 in Gujarat</p>
+    <!-- LOGO -->
+    <img src="images/logo.png">
+    <h1>ABC Institute</h1>
+    <p>🏆 Rank #1 Institute</p>
 </header>
 
 <div class="card-container">
     <div class="card">
-        <h3>Top Faculty</h3>
-        <p>Experienced professionals</p>
+        <div class="img-box">
+            <img src="images/campus.jpg">
+        </div>
+        <h3>Campus</h3>
+        <a class="btn">View</a>
     </div>
+
     <div class="card">
-        <h3>Placements</h3>
-        <p>100% placement support</p>
+        <div class="img-box">
+            <img src="images/faculty.jpg">
+        </div>
+        <h3>Faculty</h3>
+        <a class="btn">View</a>
     </div>
+
     <div class="card">
-        <h3>Modern Campus</h3>
-        <p>Smart classrooms & labs</p>
+        <div class="img-box">
+            <img src="images/placement.jpg">
+        </div>
+        <h3>Placement</h3>
+        <a class="btn">View</a>
     </div>
 </div>
-</section>
+</div>
 
 <!-- ABOUT -->
-<section id="about">
+<div id="about" class="page">
 <h2>About Institute</h2>
 
-<div class="card">
-    <h3>History</h3>
-    <p>Established in 2005, ABC Institute is a leading educational hub.</p>
+<div class="card-container">
+    <div class="card">
+        <div class="img-box">
+            <img src="images/history.jpg">
+        </div>
+        History
+    </div>
+
+    <div class="card">
+        <div class="img-box">
+            <img src="images/vision.jpg">
+        </div>
+        Vision
+    </div>
+</div>
 </div>
 
-<div class="card">
-    <h3>Vision</h3>
-    <p>To become a global leader in education and innovation.</p>
-</div>
-</section>
-
-<!-- STUDENT PORTAL -->
-<section id="portal">
+<!-- PORTAL -->
+<div id="portal" class="page">
 <h2>Student Portal</h2>
 
 <div class="card-container">
@@ -223,53 +261,53 @@ function showPage(pageId) {
     <div class="card">Admission</div>
     <div class="card">Results</div>
     <div class="card">Courses</div>
-    <div class="card">Degree Info</div>
 </div>
-</section>
+</div>
 
 <!-- COURSES -->
-<section id="courses">
+<div id="courses" class="page">
 <h2>Courses</h2>
 
 <div class="card-container">
     <div class="card">BBA</div>
     <div class="card">MBA</div>
-    <div class="card">B.Com</div>
-    <div class="card">M.Com</div>
 </div>
-</section>
+</div>
 
 <!-- SPORTS -->
-<section id="sports">
+<div id="sports" class="page">
 <h2>Sports & Culture</h2>
 
 <div class="card-container">
     <div class="card">
-        <h3>Sports</h3>
-        <p>Cricket, Football, Basketball</p>
+        <div class="img-box">
+            <img src="images/sports.jpg">
+        </div>
+        Sports
     </div>
 
     <div class="card">
-        <h3>Cultural Events</h3>
-        <p>Dance, Music, Drama Fest</p>
+        <div class="img-box">
+            <img src="images/culture.jpg">
+        </div>
+        Culture
     </div>
 </div>
-</section>
+</div>
 
 <!-- CONTACT -->
-<section id="contact">
-<h2>Contact Us</h2>
+<div id="contact" class="page">
+<h2>Contact</h2>
 
 <div class="card">
-    <p>📍 Ahmedabad, Gujarat</p>
-    <p>📧 info@abc.com</p>
-    <p>📞 +91 9876543210</p>
+    📍 Ahmedabad <br>
+    📧 info@abc.com <br>
+    📞 9876543210
 </div>
-</section>
+</div>
 
-<!-- Footer -->
 <footer>
-    <p>© 2026 ABC Institute</p>
+© 2026 ABC Institute
 </footer>
 
 </body>
