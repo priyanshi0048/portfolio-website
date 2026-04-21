@@ -1,0 +1,276 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>ABC Institute</title>
+
+<style>
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Arial, sans-serif;
+}
+
+/* Top Bar */
+.topbar {
+    background: #002147;
+    color: white;
+    padding: 15px;
+    display: flex;
+    align-items: center;
+}
+
+.menu-btn {
+    font-size: 26px;
+    cursor: pointer;
+    margin-right: 15px;
+}
+
+/* Sidebar */
+.sidebar {
+    position: fixed;
+    left: -260px;
+    top: 0;
+    width: 260px;
+    height: 100%;
+    background: #001530;
+    transition: 0.3s;
+    padding-top: 20px;
+    z-index: 1000;
+}
+
+.sidebar a {
+    display: block;
+    color: white;
+    padding: 15px;
+    text-decoration: none;
+    border-bottom: 1px solid #333;
+}
+
+.sidebar a:hover {
+    background: #00c3ff;
+}
+
+/* Active Sidebar */
+.sidebar.active {
+    left: 0;
+}
+
+/* Overlay */
+.overlay {
+    position: fixed;
+    display: none;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+}
+
+.overlay.active {
+    display: block;
+}
+
+/* Header */
+header {
+    text-align: center;
+    padding: 30px;
+    background: linear-gradient(to right, #004e92, #000428);
+    color: white;
+}
+
+header img {
+    width: 80px;
+}
+
+/* Sections */
+section {
+    display: none;
+    padding: 30px;
+}
+
+section.active {
+    display: block;
+}
+
+/* Cards */
+.card-container {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+}
+
+.card {
+    flex: 1 1 300px;
+    background: #f4f4f4;
+    padding: 20px;
+    border-radius: 10px;
+    text-align: center;
+    transition: 0.3s;
+}
+
+.card:hover {
+    transform: scale(1.05);
+}
+
+/* Footer */
+footer {
+    background: #002147;
+    color: white;
+    text-align: center;
+    padding: 15px;
+}
+
+/* Mobile */
+@media(max-width: 768px) {
+    .card-container {
+        flex-direction: column;
+    }
+}
+</style>
+
+<script>
+function toggleMenu() {
+    document.getElementById("sidebar").classList.toggle("active");
+    document.getElementById("overlay").classList.toggle("active");
+}
+
+function showPage(pageId) {
+    // Hide all sections
+    let pages = document.querySelectorAll("section");
+    pages.forEach(page => page.classList.remove("active"));
+
+    // Show selected
+    document.getElementById(pageId).classList.add("active");
+
+    // Scroll to top
+    window.scrollTo({ top: 0, behavior: "smooth" });
+
+    // Close menu
+    document.getElementById("sidebar").classList.remove("active");
+    document.getElementById("overlay").classList.remove("active");
+}
+</script>
+
+</head>
+
+<body>
+
+<!-- Top Bar -->
+<div class="topbar">
+    <span class="menu-btn" onclick="toggleMenu()">☰</span>
+    <h2>ABC Institute</h2>
+</div>
+
+<!-- Sidebar -->
+<div id="sidebar" class="sidebar">
+    <a onclick="showPage('home')">Home</a>
+    <a onclick="showPage('about')">About</a>
+    <a onclick="showPage('portal')">Student Portal</a>
+    <a onclick="showPage('courses')">Courses</a>
+    <a onclick="showPage('sports')">Sports & Culture</a>
+    <a onclick="showPage('contact')">Contact</a>
+</div>
+
+<div id="overlay" class="overlay" onclick="toggleMenu()"></div>
+
+<!-- HOME -->
+<section id="home" class="active">
+<header>
+    <img src="https://via.placeholder.com/80">
+    <h1>ABC Institute of Management</h1>
+    <p>🏆 Ranked #1 in Gujarat</p>
+</header>
+
+<div class="card-container">
+    <div class="card">
+        <h3>Top Faculty</h3>
+        <p>Experienced professionals</p>
+    </div>
+    <div class="card">
+        <h3>Placements</h3>
+        <p>100% placement support</p>
+    </div>
+    <div class="card">
+        <h3>Modern Campus</h3>
+        <p>Smart classrooms & labs</p>
+    </div>
+</div>
+</section>
+
+<!-- ABOUT -->
+<section id="about">
+<h2>About Institute</h2>
+
+<div class="card">
+    <h3>History</h3>
+    <p>Established in 2005, ABC Institute is a leading educational hub.</p>
+</div>
+
+<div class="card">
+    <h3>Vision</h3>
+    <p>To become a global leader in education and innovation.</p>
+</div>
+</section>
+
+<!-- STUDENT PORTAL -->
+<section id="portal">
+<h2>Student Portal</h2>
+
+<div class="card-container">
+    <div class="card">Exam Form</div>
+    <div class="card">Admission</div>
+    <div class="card">Results</div>
+    <div class="card">Courses</div>
+    <div class="card">Degree Info</div>
+</div>
+</section>
+
+<!-- COURSES -->
+<section id="courses">
+<h2>Courses</h2>
+
+<div class="card-container">
+    <div class="card">BBA</div>
+    <div class="card">MBA</div>
+    <div class="card">B.Com</div>
+    <div class="card">M.Com</div>
+</div>
+</section>
+
+<!-- SPORTS -->
+<section id="sports">
+<h2>Sports & Culture</h2>
+
+<div class="card-container">
+    <div class="card">
+        <h3>Sports</h3>
+        <p>Cricket, Football, Basketball</p>
+    </div>
+
+    <div class="card">
+        <h3>Cultural Events</h3>
+        <p>Dance, Music, Drama Fest</p>
+    </div>
+</div>
+</section>
+
+<!-- CONTACT -->
+<section id="contact">
+<h2>Contact Us</h2>
+
+<div class="card">
+    <p>📍 Ahmedabad, Gujarat</p>
+    <p>📧 info@abc.com</p>
+    <p>📞 +91 9876543210</p>
+</div>
+</section>
+
+<!-- Footer -->
+<footer>
+    <p>© 2026 ABC Institute</p>
+</footer>
+
+</body>
+</html>
